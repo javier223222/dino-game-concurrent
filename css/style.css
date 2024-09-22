@@ -1,0 +1,89 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #ece9e6 0%, #ffffff 100%);
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .game-container {
+    position: relative;
+    width: 800px;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: none;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+  }
+  
+  /* Estilos para el puntaje */
+  .score {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 5px 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Botón de reinicio */
+
+
+
+ 
+/* Centrar el botón de reinicio */
+.restart-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #007bff;
+  color: white;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+
+.restart-btn:hover {
+  background-color: #0056b3;
+}
+
+.restart-btn:active {
+  background-color: #004080;
+  transform: translate(-50%, -50%) scale(0.95);
+}
+
+/* Centrar el texto de Game Over */
+.game-over {
+  position: absolute;
+  top: 40%; /* Posicionamos más alto para no superponer con el botón */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 50px; /* Hacemos el texto grande */
+  color: red;
+  font-weight: bold;
+  text-align: center;
+  z-index: 10; /* Aseguramos que esté en el frente */
+  visibility: hidden;
+ 
+}
