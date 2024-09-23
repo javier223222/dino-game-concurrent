@@ -38,9 +38,9 @@ function checkColision(gameState, obstacles) {
         let obstacleHeight = 20;
 
         if (dinoX < obstacleX + obstacleWidth &&
-          dinoX + dinoWidth > obstacleX &&
+          dinoX + dinoWidth-20 > obstacleX &&
           dinoY < obstacleY + obstacleHeight &&
-          dinoY + dinoHeight > obstacleY) {
+          dinoY + dinoHeight-20 > obstacleY) {
           postMessage({ action: 'gameOver', score });
         }
       });
