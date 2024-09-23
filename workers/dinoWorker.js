@@ -5,16 +5,16 @@ let dino = {
     height: 50,
     velocityY: 0,
     gravity: 1.5,  // Reducimos la gravedad para que caiga más lento
-    jumpPower: -17,  // Aumentamos la potencia del salto para que suba más rápido
+    jumpPower: -18,  // Aumentamos la potencia del salto para que suba más rápido
     isJumping: false,
   };
   
   self.onmessage = function (e) {
     if (e.data.action === 'update') {
-      updateDino();
-      postMessage({ action: 'draw', dino });
+      updateDino();  // Actualiza la posición del dinosaurio
+      postMessage({ action: 'draw', dino }); // Envía la posición actualizada del dinosaurio
     }else if (e.data.action === 'jump') {
-      jump();
+      jump(); // Hace saltar al dinosaurio
 
       
      

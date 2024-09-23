@@ -2,13 +2,13 @@ let score = 0;
 let gameSpeed = 5;
 
 
-onmessage = function (e) {
+self.onmessage = function (e) {
     if (e.data.action === 'update') {
-      updateGameLogic(e.data.score);
-      postMessage({ action: 'update', score, gameSpeed });
+      updateGameLogic(e.data.score);  // Actualiza la lógica del juego
+      postMessage({ action: 'update', score, gameSpeed }); // Envía la puntuación y la velocidad del juego
     }
     if (e.data.action === 'checkColision') {
-      checkColision(e.data.dino,e.data.obstacles);
+      checkColision(e.data.dino,e.data.obstacles); // Comprueba si el dinosaurio choca con un obstáculo
     }
   
    
@@ -22,22 +22,6 @@ function updateGameLogic(currentScore) {
   }
 }
 
-// function checkColision(gameState,obstacles){
-//     if (obstacles.length > 0) {
-//         if (gameState.dino.y + 70 > 180) {
-//           // Comprobar si el dinosaurio choca con un obstáculo
-//           let dinoX = gameState.dino.x;
-//           let dinoY = gameState.dino.y;
-//           let dinoWidth = 50;
-//           let dinoHeight = 50;
-//           obstacles.forEach(obstacle => {
-//             if (dinoX < obstacle.x + 10 && dinoX + dinoWidth > obstacle.x && dinoY < obstacle.y + 20 && dinoY + dinoHeight > obstacle.y) {
-//                 postMessage({ action: 'gameOver',score });
-//             }
-//           });
-//         }
-//       }
-// }
 
 function checkColision(gameState, obstacles) {
   if (obstacles.length > 0) {
@@ -63,6 +47,10 @@ function checkColision(gameState, obstacles) {
     }
   }
  }
+ 
+
+
+
   
   
   
